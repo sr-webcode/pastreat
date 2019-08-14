@@ -1,0 +1,10 @@
+$breakPoints: (small : 400px, medium: 750px, large: 920px);
+
+
+@mixin respond-to($size) {
+  $value: map-get($breakPoints, $size);
+
+  @media screen and(min-width: $value) {
+    @content;
+  }
+}

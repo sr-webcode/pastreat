@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Navigation extends Component {
   render() {
     return (
-      <nav>
+      <nav className="site-nav">
         <ul>
           <li>Link 1</li>
           <li>Link 2</li>
