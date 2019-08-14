@@ -1,10 +1,7 @@
-const app = require('express')();
+const app = require("express")();
 const PORT = process.env.PORT || 4040;
+const { routeManager } = require("./helper/index");
 
-
-app.get("/", (req, res) => {
-  res.end('welcome to the home page broddah!')
-})
+routeManager(app);
 
 app.listen(PORT);
-

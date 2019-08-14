@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client:dev": "",
-    "client:build": "",
-    "server:dev": "nodemon ./server/index.js",
-    "server:build": "node ./server/index.js"
+    "dev:client": "",
+    "build:client": "",
+    "dev:server": "nodemon ./server/index.js",
+    "build:server": "node ./server/index.js"
   },
   "keywords": [],
   "author": "sean <sr.webcode@gmail.com>",
@@ -31,6 +31,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "nodemon": "^1.19.1",
     "postcss-loader": "^3.0.0",

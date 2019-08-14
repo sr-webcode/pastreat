@@ -1,5 +1,5 @@
-const routeManger = require('./_routeManager');
+const routeManager = require("./_routeManager");
 
 module.exports = {
-  routeManger
-}
+  routeManager
+};
