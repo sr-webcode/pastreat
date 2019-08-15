@@ -5,10 +5,11 @@ export class Navigation extends Component {
     return (
       <nav className="site-nav">
         <ul>
-          <li>Link 1</li>
-          <li>Link 2</li>
-          <li>Link 3</li>
-          <li>Link 4</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Pastries</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Cart</a></li>
+          <li><a href="#">Search</a></li>
         </ul>
       </nav>
     );

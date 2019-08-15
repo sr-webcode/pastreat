@@ -1,5 +1,23 @@
-.container {
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+//colors
+
+$primary-color:#B90550;
+$secondary-color: #fefefe;
+
+$primary-font-color: #ffff;
+$secondary-font-color: rgb(122, 51, 37);
+
+$primary-border-color: rgba(90, 73, 70, 0.7);
+
+
+$primary-font : 'Montserrat',
+'Helvetica',
+'Arial',
+'Sans-serif';
+
+$secondary-font : 'Pacifico',
+'Helvetica',
+'Arial',
+'Sans-serif'

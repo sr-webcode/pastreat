@@ -4,7 +4,9 @@ import Navigation from "../../containers/navigation";
 const Header = () => {
   return (
     <header className="site-header">
-      <Navigation />
+      <div className="container">
+        <Navigation />
+      </div>
     </header>
   );
 };

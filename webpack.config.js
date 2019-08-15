@@ -51,6 +51,16 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpe?g|png|svg|gif)$/,
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: 'images/[name].[ext]',
+            outputPath: path.resolve(__dirname, "build")
+          }
+        }]
       }
     ]
   },
