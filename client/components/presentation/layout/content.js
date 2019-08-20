@@ -1,9 +1,11 @@
 import React from "react";
+import HeroSection from './heroSection'
+
 
 const Content = () => {
   return (
     <main>
-      the main content!
+      <HeroSection />
     </main>
   );
 };

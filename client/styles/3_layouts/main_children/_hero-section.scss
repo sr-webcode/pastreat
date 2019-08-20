@@ -1,0 +1,54 @@
+.hero-section {
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  min-height: 290px;
+
+  h1 {
+    font-size: 40px;
+    color: rgb(216, 67, 114);
+  }
+
+  @include respond-to(medium) {
+    min-height: 440px;
+  }
+}
+
+.hero-child {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &:nth-of-type(2) {
+    display: none;
+  }
+
+  @include respond-to(medium) {
+    display: inline-block;
+    width: 49.99%;
+    vertical-align: top;
+    min-height: 400px;
+
+    &:nth-of-type(2) {
+      display: inline-block;
+      background-color: pink;
+    }
+  }
+
+}
+
+.hero-child-caption {
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.hero-child-slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cta-hero {
+  @extend .cta-defaults;
+  margin-top: 5px;
+}

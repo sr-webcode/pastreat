@@ -12,7 +12,8 @@ module.exports = {
   },
   devServer: {
     port: 2020,
-    open: "chrome"
+    open: "chrome",
+    historyApiFallback: true
   },
   optimization: {},
   module: {
