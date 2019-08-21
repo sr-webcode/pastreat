@@ -6,6 +6,7 @@ export class Navigation extends Component {
     return (
       <nav className="site-nav">
         <Burger />
+
         <ul>
           <li>
             <a href="#">Home</a>

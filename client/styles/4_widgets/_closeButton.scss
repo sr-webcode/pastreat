@@ -1,0 +1,27 @@
+.site-close-btn {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  background-color: #343434;
+  border-radius: 50%;
+  z-index: 5;
+
+  &::after {
+    content: "X";
+    display: inline-block;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    color: $primary-font-color;
+  }
+}
+
+
+//please fix dimension of close button
