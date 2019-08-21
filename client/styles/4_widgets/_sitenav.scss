@@ -2,9 +2,13 @@
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-
+  position: relative;
   ul {
+    display: none;
     text-align: right;
+    @include respond-to(medium) {
+      display: block;
+    }
   }
 
   ul,
@@ -46,7 +50,7 @@
       height: 2px;
       background-color: $primary-border-color;
       border-radius: 4px;
-      transition: width 0.20s ease;
+      transition: width 0.2s ease;
     }
   }
 }

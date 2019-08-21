@@ -12,7 +12,6 @@ module.exports = {
   },
   devServer: {
     port: 2020,
-    open: "chrome",
     historyApiFallback: true
   },
   optimization: {},
@@ -55,13 +54,15 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|svg|gif)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: 'images/[name].[ext]',
-            outputPath: path.resolve(__dirname, "build")
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name].[ext]",
+              outputPath: path.resolve(__dirname, "build")
+            }
           }
-        }]
+        ]
       }
     ]
   },
