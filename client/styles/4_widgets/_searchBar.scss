@@ -1,1 +1,27 @@
-.site-search-bar {}
+.site-search-bar {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gainsboro;
+  color: #343434;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+
+  input[type="text"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    outline: none;
+
+    &::placeholder {
+      letter-spacing: 1px;
+      color: rgba(58, 58, 58, 0.60);
+    }
+  }
+}

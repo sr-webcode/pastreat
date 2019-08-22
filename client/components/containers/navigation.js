@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import Burger from "./burger";
 
 export class Navigation extends Component {
   render() {
     return (
       <nav className="site-nav">
-        <Burger />
-
         <ul>
           <li>
             <a href="#">Home</a>

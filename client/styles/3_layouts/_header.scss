@@ -1,8 +1,15 @@
 .site-header {
   font-family: 'Montserrat', "Helvetica", "Arial";
   color: $primary-font-color;
+  min-height: 50px;
+  position: relative;
 
   .container {
-    position: relative;
+    padding: 0;
+
+    @include respond-to(medium) {
+      padding: 0 10px;
+      position: relative;
+    }
   }
 }
