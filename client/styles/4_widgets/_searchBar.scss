@@ -24,4 +24,14 @@
       color: rgba(58, 58, 58, 0.60);
     }
   }
+
+  .site-close-btn {
+    top: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 8px;
+    border-radius: 0;
+    background-color: $primary-color;
+  }
 }

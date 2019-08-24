@@ -4,6 +4,7 @@ import Burger from '../../containers/mobileMenu/burger';
 import SearchBar from '../../containers/searchBar';
 
 
+
 const Header = () => {
   return (
     <header className="site-header">

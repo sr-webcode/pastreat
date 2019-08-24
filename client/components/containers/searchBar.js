@@ -5,6 +5,7 @@ class SearchBar extends Component {
     return (
       <div className="site-search-bar">
         <input type="text" placeholder="Search for pastries..." />
+        <span className="site-close-btn" />
       </div>
     )
   }

@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux'
+import actions from '../../../redux-layer/actions/index';
+
 
 class Burger extends Component {
   render() {
+    console.log(this.props);
     return (
-      <span className="nav-burger">
+      <span className="nav-burger" onClick={this.props.burgerToggle}>
         <div />
         <div />
         <div />
@@ -12,4 +16,19 @@ class Burger extends Component {
   }
 }
 
-export default Burger;
+const mapStateProps = (state) => {
+  return {
+    widgets: state.widgets
+  }
+}
+
+
+const mapDispatchProps = (dispatch) => {
+  return {
+    burgerToggle: () => dispatch(actions.burgerToggle())
+  }
+}
+
+
+
+export default connect(mapStateProps, mapDispatchProps)(Burger);
