@@ -1,7 +1,6 @@
 const burgerToggle = () => {
   return {
     type: 'toggleBurger',
-
   }
 }
 

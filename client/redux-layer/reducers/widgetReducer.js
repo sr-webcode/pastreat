@@ -6,10 +6,11 @@ const widgetState = {
 }
 
 const widgetReducer = (state = widgetState, action) => {
+  let modifiedState;
   switch (action.type) {
     case "toggleBurger":
-      console.log(`hello toggling burger now!`)
-      return state;
+      modifiedState = Object.assign({}, state, { mobileMenu: !state.mobileMenu })
+      return modifiedState;
     default:
       return state;
   }

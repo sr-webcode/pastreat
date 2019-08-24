@@ -5,7 +5,6 @@ import actions from '../../../redux-layer/actions/index';
 
 class Burger extends Component {
   render() {
-    console.log(this.props);
     return (
       <span className="nav-burger" onClick={this.props.burgerToggle}>
         <div />
