@@ -1,11 +1,38 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import actions from '../../redux-layer/actions/index';
+
 
 class Overlay extends Component {
+
   render() {
+    const showOverlay = this.props.menuStatus.overlay;
+
     return (
-      <div className="site-overlay"></div>
+      <div
+        className={showOverlay ? "site-overlay show" : "site-overlay"}
+        onClick={this.props.overlayClick}
+      />
     )
   }
 }
 
-export default Overlay
+
+const mapStateProps = (state) => {
+  return {
+    menuStatus: state.widgets
+  }
+}
+
+
+const mapDispatchProps = (dispatch) => {
+  return {
+    overlayClick: () => dispatch(actions.overlayClick())
+  }
+}
+
+
+
+
+export default connect(mapStateProps, mapDispatchProps)(Overlay)
+

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 class Cart extends Component {
   render() {
+    const showCart = this.props.menuStatus.cartMenu;
     return (
-      <div className="site-cart">
+      <div className={showCart ? "site-cart show" : "site-cart"}>
         <span className="cart-close-btn"></span>
         <h1>Your Cart</h1>
         <ul className="dummy-items">
@@ -36,4 +37,8 @@ class Cart extends Component {
   }
 }
 
-export default Cart
+
+
+////will resume tomorrow.. due to electric interferencessss
+
+export default connect(mapStateProps)(Cart)

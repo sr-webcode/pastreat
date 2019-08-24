@@ -4,8 +4,25 @@ const burgerToggle = () => {
   }
 }
 
+const overlayClick = () => {
+  return {
+    type: "overlayClick",
+  }
+}
+
+
+const cartToggle = () => {
+  return {
+    type: "toggleCart"
+  }
+}
+
+
+
 const actions = {
-  burgerToggle
+  burgerToggle,
+  overlayClick,
+  cartToggle
 }
 
 export default actions;
