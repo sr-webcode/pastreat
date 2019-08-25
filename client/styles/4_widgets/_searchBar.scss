@@ -1,13 +1,14 @@
 .site-search-bar {
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
   background-color: gainsboro;
   color: #343434;
-  z-index: 20;
+  z-index: 60;
   width: 100%;
   height: 100%;
+  transform: translateY(-100%);
 
   input[type="text"] {
     position: relative;
@@ -33,5 +34,20 @@
     margin-right: 8px;
     border-radius: 0;
     background-color: $primary-color;
+  }
+}
+
+.site-search-bar.show {
+  display: block;
+  animation: slideDown 0.40s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }

@@ -3,7 +3,9 @@ import widgetAction from './widgetActions'
 const actions = {
   burgerToggle: widgetAction.burgerToggle,
   overlayClick: widgetAction.overlayClick,
-  cartToggle: widgetAction.cartToggle
+  openCart: widgetAction.openCart,
+  closeCart: widgetAction.closeCart,
+  openSearch: widgetAction.openSearch
 }
 
 export default actions;

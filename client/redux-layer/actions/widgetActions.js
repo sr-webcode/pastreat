@@ -3,26 +3,37 @@ const burgerToggle = () => {
     type: 'toggleBurger',
   }
 }
-
 const overlayClick = () => {
   return {
     type: "overlayClick",
   }
 }
-
-
-const cartToggle = () => {
+const openCart = () => {
   return {
-    type: "toggleCart"
+    type: "openCart"
   }
 }
 
+
+const closeCart = () => {
+  return {
+    type: "closeCart"
+  }
+}
+
+const openSearch = () => {
+  return {
+    type: "openSearch"
+  }
+}
 
 
 const actions = {
   burgerToggle,
   overlayClick,
-  cartToggle
+  openCart,
+  closeCart,
+  openSearch
 }
 
 export default actions;

@@ -14,8 +14,8 @@ class MobileMenu extends Component {
           <li><a href="#">Home</a></li>
           <li><a href="#">Pastries</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="#" onClick={this.props.cartToggle}>Cart</a></li>
-          <li><a href="#">Search</a></li>
+          <li><a href="#" onClick={this.props.openCart}>Cart</a></li>
+          <li><a href="#" onClick={this.props.openSearch}>Search</a></li>
         </ul>
       </div>
     )
@@ -32,7 +32,8 @@ const mapStateProps = (state) => {
 
 const mapDispatchProps = (dispatch) => bindActionCreators({
   burgerToggle: actions.burgerToggle,
-  cartToggle: actions.cartToggle
+  openCart: actions.openCart,
+  openSearch: actions.openSearch
 }, dispatch)
 
 

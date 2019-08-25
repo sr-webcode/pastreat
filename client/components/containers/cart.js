@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import actions from '../../redux-layer/actions/index'
+
+
 class Cart extends Component {
   render() {
-    const showCart = this.props.menuStatus.cartMenu;
+    const showCart = this.props.menuStatus.cartMenu
     return (
+
       <div className={showCart ? "site-cart show" : "site-cart"}>
-        <span className="cart-close-btn"></span>
+        <span className="cart-close-btn" onClick={this.props.closeCart} />
         <h1>Your Cart</h1>
         <ul className="dummy-items">
           <li>Item 1</li>
@@ -38,7 +42,15 @@ class Cart extends Component {
 }
 
 
+const mapStateProps = (state) => {
+  return {
+    menuStatus: state.widgets
+  }
+}
+const mapDispatchProps = (dispatch) => {
+  return {
+    closeCart: () => dispatch(actions.closeCart())
+  }
+}
 
-////will resume tomorrow.. due to electric interferencessss
-
-export default connect(mapStateProps)(Cart)
+export default connect(mapStateProps, mapDispatchProps)(Cart);

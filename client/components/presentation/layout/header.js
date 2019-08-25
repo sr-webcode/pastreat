@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="container">
-        {/* <SearchBar /> */}
+        <SearchBar />
         <Burger />
         <Navigation />
       </div>
