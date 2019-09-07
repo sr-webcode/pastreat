@@ -3,6 +3,8 @@ const isProduction = process.env.NODE_ENV !== "production";
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const htmlGenerate = require("html-webpack-plugin");
 const cssExtract = require("mini-css-extract-plugin");
+const copyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: isProduction ? "development" : "production",
   entry: path.resolve(__dirname, "./client/components/app.js"),
@@ -58,7 +60,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "images/[name].[ext]",
+              name: "images/assets/[name].[ext]",
               outputPath: path.resolve(__dirname, "build")
             }
           }
@@ -74,6 +76,9 @@ module.exports = {
     new cssExtract({
       filename: "css/style.css"
     }),
+    new copyPlugin([
+      { from: "./client/images/slider", to: "./images/slider" }
+    ]),
     new CleanWebpackPlugin()
   ]
 };

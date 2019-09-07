@@ -22,7 +22,7 @@ const widgetReducer = (state = widgetState, action) => {
       modifiedState = Object.assign({}, state, { mobileMenu: false, overlay: false, mobileMenu: false, cartMenu: false })
       return modifiedState;
     case "openSearch":
-      modifiedState = Object.assign({}, state, { mobileMenu: !state.mobileMenu, overlay: true, searchBar: true })
+      modifiedState = Object.assign({}, state, { mobileMenu: false, overlay: true, searchBar: true })
       return modifiedState;
     default:
       return state;

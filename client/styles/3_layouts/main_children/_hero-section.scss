@@ -17,6 +17,7 @@
   position: relative;
   display: block;
   width: 100%;
+  overflow: hidden;
 
   &:nth-of-type(2) {
     display: none;
@@ -30,7 +31,7 @@
 
     &:nth-of-type(2) {
       display: inline-block;
-      background-color: pink;
+      background-color: tomato;
     }
   }
 }
@@ -43,13 +44,6 @@
   @include respond-to(small) {
     text-align: left;
   }
-}
-
-.hero-child-slider {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .cta-hero {

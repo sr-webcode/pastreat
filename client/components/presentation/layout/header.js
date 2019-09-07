@@ -8,8 +8,8 @@ import SearchBar from '../../containers/searchBar';
 const Header = () => {
   return (
     <header className="site-header">
+      <SearchBar />
       <div className="container">
-        <SearchBar />
         <Burger />
         <Navigation />
       </div>

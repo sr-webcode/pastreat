@@ -27,7 +27,6 @@ const openSearch = () => {
   }
 }
 
-
 const actions = {
   burgerToggle,
   overlayClick,
