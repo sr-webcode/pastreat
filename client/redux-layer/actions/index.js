@@ -6,7 +6,8 @@ const actions = {
   openCart: widgetAction.openCart,
   closeCart: widgetAction.closeCart,
   openSearch: widgetAction.openSearch,
-  slideChange: slideAction.slideChange
+  initSlide: slideAction.initSlide,
+  slideChange: slideAction.slideChange,
 }
 
 export default actions;

@@ -5,6 +5,7 @@ const htmlGenerate = require("html-webpack-plugin");
 const cssExtract = require("mini-css-extract-plugin");
 const copyPlugin = require('copy-webpack-plugin');
 
+
 module.exports = {
   mode: isProduction ? "development" : "production",
   entry: path.resolve(__dirname, "./client/components/app.js"),
@@ -69,6 +70,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new copyPlugin([{
+      from: "./client/images",
+      to: "./images"
+    }]),
     new htmlGenerate({
       filename: "index.html",
       template: path.resolve(__dirname, "./client/index.html")
@@ -76,9 +81,7 @@ module.exports = {
     new cssExtract({
       filename: "css/style.css"
     }),
-    new copyPlugin([
-      { from: "./client/images/slider", to: "./images/slider" }
-    ]),
     new CleanWebpackPlugin()
   ]
 };
+

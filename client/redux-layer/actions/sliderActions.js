@@ -1,12 +1,21 @@
 
-const slideChange = (number) => {
+const initSlide = () => {
   return {
-    type: "slideChange",
-    payload: payload
+    type: "initSlide",
   }
 }
 
+const slideChange = (val) => {
+  return {
+    type: "slideChange",
+    payload: val
+  }
+}
+
+
+
 const sliderActions = {
+  initSlide,
   slideChange
 }
 
