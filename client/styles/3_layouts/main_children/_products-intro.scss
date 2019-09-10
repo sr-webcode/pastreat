@@ -1,0 +1,39 @@
+.products-intro {
+  position: relative;
+  background-color: tomato;
+  padding: 20px 0;
+}
+
+.product-box {
+  display: block;
+
+  @include respond-to(medium) {
+    display: inline-block;
+    width: calc(100% / 3);
+    vertical-align: middle;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.product-box-img {
+  display: inline-block;
+  width: 29.99%;
+  vertical-align: middle;
+  img {
+    width: 100%;
+    max-width: 130px;
+    max-height: 130px;
+    transition: transform 0.4s ease;
+  }
+}
+
+.product-box-desc {
+  display: inline-block;
+  width: 69.99%;
+  vertical-align: top;
+  padding: 10px;
+}

@@ -1,15 +1,33 @@
 .site-header {
-  font-family: 'Montserrat', "Helvetica", "Arial";
+  font-family: "Montserrat", "Helvetica", "Arial";
   color: $primary-font-color;
   min-height: 50px;
   position: relative;
 
   .container {
     padding: 0;
-
     @include respond-to(medium) {
       padding: 0 10px;
       position: relative;
+      #siteLogo {
+        top: 0;
+        left: 0;
+        right: unset;
+        margin-top: 15px;
+        margin-right: unset;
+        margin-left: 10px;
+      }
     }
   }
+}
+
+#siteLogo {
+  position: absolute;
+  display: inline-block;
+  color: $primary-color;
+  font-family: $secondary-font;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
 }
