@@ -1,7 +1,7 @@
 main {
   width: 100%;
+
   min-height: 100%;
-  background-color: rebeccapurple;
   font-family: "Montserrat", "Hevetica", "Arial";
   font-size: 15px;
   color: rgb(37, 37, 37);
@@ -18,4 +18,5 @@ main {
 }
 
 @import "./main_children/hero-section";
-@import "./main_children//products-intro";
+@import "./main_children/products-intro";
+@import "./main_children/recentRecipes";

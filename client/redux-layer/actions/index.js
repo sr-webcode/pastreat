@@ -1,5 +1,8 @@
 import widgetAction from './widgetActions'
 import slideAction from './sliderActions'
+import recentProductAction from './recentProductActions'
+
+
 const actions = {
   burgerToggle: widgetAction.burgerToggle,
   overlayClick: widgetAction.overlayClick,
@@ -8,6 +11,8 @@ const actions = {
   openSearch: widgetAction.openSearch,
   initSlide: slideAction.initSlide,
   slideChange: slideAction.slideChange,
+  setRecentProducts: recentProductAction.setRecentProducts
+
 }
 
 export default actions;

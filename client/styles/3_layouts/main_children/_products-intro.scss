@@ -1,17 +1,24 @@
 .products-intro {
   position: relative;
-  background-color: tomato;
-  padding: 20px 0;
+  background-color: #F9F5EF;
+  padding: 18px 0;
+
+  @include respond-to(medium) {
+    padding: 40px 0;
+  }
 }
 
 .product-box {
   display: block;
+  margin: 40px 0;
 
   @include respond-to(medium) {
+    margin: 0;
     display: inline-block;
     width: calc(100% / 3);
     vertical-align: middle;
   }
+
   &:hover {
     img {
       transform: scale(1.1);
@@ -23,11 +30,13 @@
   display: inline-block;
   width: 29.99%;
   vertical-align: middle;
+
   img {
     width: 100%;
-    max-width: 130px;
-    max-height: 130px;
+    max-width: 95px;
+    max-height: 95px;
     transition: transform 0.4s ease;
+    margin: auto;
   }
 }
 
