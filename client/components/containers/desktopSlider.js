@@ -2,28 +2,23 @@ import React, { Component } from 'react'
 import actions from '../../redux-layer/actions/index'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import Slide from '../presentation/layout/slide'
-
-
+import SlideShow from '../presentation/layout/slide'
+import SlideShowBullets from '../presentation/layout/slideBullets'
 
 class DesktopSlider extends Component {
+
   componentDidMount() {
     setInterval(() => {
       this.props.initSlide();
-    }, 2000);
+    }, 2500);
   }
 
   render() {
-    const count = this.props.slideState.count;
-    // console.log(count);
-    const sliders = this.props.slideState.sliders;
-    return (<div className="hero-child-slider"  >
-      {sliders.map((slide, index) => {
-        const shouldShow = slide.enabled;
-        return <Slide key={index} slideIndex={index} isEnabled={shouldShow} />
-      })}
+    const currentSliders = this.props.slideState.sliders;
+    return (<div className="hero-child-slider">
+      <SlideShow sliders={currentSliders} />
+      <SlideShowBullets sliders={currentSliders} changeSlide={this.props.manualChange} />
     </div>)
-
   }
 }
 

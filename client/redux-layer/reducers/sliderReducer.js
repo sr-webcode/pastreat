@@ -23,7 +23,6 @@ const sliderReducer = (state = sliderState, action) => {
   switch (action.type) {
     case "initSlide":
       const currentCount = state.count;
-      // console.log(currentCount);
       const currentSlide = (list, slideIndex) => {
         return list.map((slide, subIndex) => {
           if (slideIndex === subIndex) {
@@ -39,7 +38,29 @@ const sliderReducer = (state = sliderState, action) => {
         )
       })
     case "slideChange":
-      console.log(action.payload);
+
+      const slideNumber = action.payload;
+
+      const currentMatch = slideRef => {
+        const safeCopy = [...state.sliders];
+        return safeCopy.map((each, index) => {
+          if (slideRef === each.slide) {
+            return {
+              slide: each.slide,
+              enabled: true
+            }
+          }
+          return {
+            slide: each.slide,
+            enabled: false
+          }
+        })
+      }
+      const currentRotation = Object.assign({}, state, {
+        count: slideNumber - 1, sliders: currentMatch(slideNumber)
+      })
+      return currentRotation;
+
     default:
       return state;
   }

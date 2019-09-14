@@ -12,8 +12,6 @@ const slideChange = (val) => {
   }
 }
 
-
-
 const sliderActions = {
   initSlide,
   slideChange

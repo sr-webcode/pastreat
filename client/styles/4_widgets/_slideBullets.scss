@@ -1,0 +1,22 @@
+.slide-bullets {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.bullet {
+  cursor: pointer;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: $primary-border-color;
+}
+
+.bullet.active {
+  background-color: $primary-color;
+}
