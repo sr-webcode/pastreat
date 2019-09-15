@@ -1,0 +1,19 @@
+.general-loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid $primary-cta-color;
+  border-top: 2px solid transparent;
+  animation: spinner 0.40s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(360deg)
+  }
+
+  to {
+    transform: rotate(0deg)
+  }
+}

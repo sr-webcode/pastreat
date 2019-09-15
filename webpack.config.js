@@ -11,7 +11,7 @@ module.exports = {
   entry: path.resolve(__dirname, "./client/components/app.js"),
   output: {
     filename: "js/[name].js",
-    path: path.resolve(__dirname, "./dist")
+    path: path.resolve(__dirname, "./dist"),
   },
   devServer: {
     port: 2020,

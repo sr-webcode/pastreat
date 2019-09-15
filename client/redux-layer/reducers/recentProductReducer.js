@@ -4,9 +4,9 @@ const recentProductState = {
 
 
 const recentProductReducer = (state = recentProductState, action) => {
-  switch (action) {
+  switch (action.type) {
     case "setRecentProducts":
-      return state;
+      return Object.assign({}, state, { items: [...action.payload] })
     default:
       return state;
   }
