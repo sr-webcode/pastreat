@@ -3,7 +3,6 @@ import React, { Fragment } from 'react'
 const ProductBox = (props) => {
 
   const itemsExtract = (val) => {
-    console.log(val);
     return val.map((each, index) => {
       return <div key={index} className="product-box-recent">
         <div className="product-box-recent-img">
@@ -20,7 +19,7 @@ const ProductBox = (props) => {
   const { items } = props;
   return (<Fragment>
     {itemsExtract(items)}
-    <a href="#" className="cta-hero" >view more products</a>
+    <a href="#" className="cta-hero" >more products</a>
   </Fragment>)
 }
 

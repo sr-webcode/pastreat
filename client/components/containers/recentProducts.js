@@ -27,9 +27,13 @@ class RecentProducts extends Component {
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       },
     ]
+
+
     setTimeout(() => {
       this.props.setProducts(tempItems)
     }, 500);
+
+
   }
 
   render() {

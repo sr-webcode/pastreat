@@ -1,0 +1,53 @@
+.about-section {
+  // min-height: 400px;
+  padding-bottom: 0;
+  margin-bottom: 50px;
+
+  .container {
+    width: 100%;
+    max-width: 550px;
+
+    @include respond-to(medium) {
+      font-size: 0;
+      max-width: 1150px;
+
+    }
+  }
+
+  @include respond-to(medium) {
+    margin-bottom: 0;
+  }
+}
+
+%ibStyle {
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 49.99%;
+  }
+
+}
+
+.about-caption {
+  padding: 20px;
+  border: 4px solid #750322;
+  @extend %ibStyle;
+
+}
+
+.about-chef {
+  @extend %ibStyle;
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 250px;
+
+    @include respond-to(medium) {
+      max-width: 350px;
+      margin: 0;
+    }
+  }
+
+}

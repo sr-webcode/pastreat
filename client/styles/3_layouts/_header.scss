@@ -4,18 +4,21 @@
   min-height: 50px;
   position: relative;
 
+
   .container {
     padding: 0;
+
     @include respond-to(medium) {
       padding: 0 10px;
       position: relative;
+
       #siteLogo {
         top: 0;
         left: 0;
         right: unset;
-        margin-top: 15px;
+        margin-top: 30px;
         margin-right: unset;
-        margin-left: 10px;
+        margin-left: 16px;
       }
     }
   }
@@ -28,6 +31,6 @@
   font-family: $secondary-font;
   top: 0;
   right: 0;
-  margin-top: 10px;
-  margin-right: 10px;
+  margin-top: 20px;
+  margin-right: 16px;
 }
