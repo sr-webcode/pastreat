@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-const AboutSection = () => {
+const SubscribeSection = () => {
   return (
-    <section className="about-section">
+    <section className="subscribe-section">
 
       <div className="container">
-        <div className="about-chef">
+        <div className="subscribe-chef">
           <img src="./images/assets/chef.jpg" alt="" />
         </div>
-        <div className="about-caption">
+        <div className="subscribe-caption">
           <h2>We make delish pastries!</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa illo aliquid ratione animi dolorem quos cum recusandae doloremque nobis ex!</p>
         </div>
@@ -19,4 +19,4 @@ const AboutSection = () => {
 }
 
 
-export default AboutSection;
+export default SubscribeSection;

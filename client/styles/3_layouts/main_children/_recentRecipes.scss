@@ -2,6 +2,20 @@
   background-color: #F9F5EF;
   padding: 40px 0;
   text-align: center;
+  position: relative;
+
+  //clouds
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("/images/assets/clouds.jpg");
+    background-repeat: repeat-x;
+  }
 
   h2 {
     margin-bottom: 40px;

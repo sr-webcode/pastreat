@@ -1,7 +1,9 @@
-.about-section {
+.subscribe-section {
   // min-height: 400px;
   padding-bottom: 0;
   margin-bottom: 50px;
+  ///ditop pls
+
 
   .container {
     width: 100%;
@@ -29,14 +31,15 @@
 
 }
 
-.about-caption {
+.subscribe-caption {
   padding: 20px;
   border: 4px solid #750322;
   @extend %ibStyle;
 
+
 }
 
-.about-chef {
+.subscribe-chef {
   @extend %ibStyle;
 
   img {
