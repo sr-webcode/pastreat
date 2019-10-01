@@ -21,17 +21,13 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  animation: fader 0.40s ease forwards;
+  animation: fader 0.90s ease forwards;
   opacity: 0;
 }
 
 @keyframes fader {
   0% {
-    opacity: 0.25
-  }
-
-  50% {
-    opacity: 0.50
+    opacity: 0
   }
 
   100% {

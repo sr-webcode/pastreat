@@ -1,31 +1,16 @@
 .subscribe-section {
   // min-height: 400px;
   position: relative;
+  padding-top: 60px;
+  padding-bottom: 40px;
 
-  padding-bottom: 0;
-  margin-bottom: 50px;
-  background-image: linear-gradient(
-      to right,
-      rgba(216, 67, 114, 0.95),
-      rgba(241, 56, 81, 0.95)
-    ),
-    url("/images/assets/bdayCakes.jpg");
+
   //cloud transparent
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #FEFEFE;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    // height: 30px;
-    // background-image: url("/images/assets/cloudTrans.png");
-    // background-repeat: repeat-x;
-  }
   .container {
     width: 100%;
     max-width: 550px;
@@ -54,19 +39,4 @@
   padding: 20px;
   border: 4px solid #750322;
   @extend %ibStyle;
-}
-
-.subscribe-chef {
-  @extend %ibStyle;
-
-  img {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 250px;
-
-    @include respond-to(medium) {
-      max-width: 350px;
-      margin: 0;
-    }
-  }
 }

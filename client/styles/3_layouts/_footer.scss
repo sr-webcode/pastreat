@@ -1,0 +1,19 @@
+footer {
+  position: relative;
+  background-color: #f9f5ef;
+  min-height: 200px;
+  padding: 40px 0;
+
+  //clouds up
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("/images/assets/clouds.jpg");
+    background-repeat: repeat-x;
+  }
+}
