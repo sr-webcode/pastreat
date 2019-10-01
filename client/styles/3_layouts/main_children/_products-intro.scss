@@ -2,7 +2,6 @@
   position: relative;
   // background-color: #F9F5EF;
   padding: 18px 0;
-
   @include respond-to(medium) {
     padding: 40px 0;
   }
@@ -11,7 +10,6 @@
 .product-box {
   display: block;
   margin: 40px 0;
-
   @include respond-to(medium) {
     margin: 0;
     display: inline-block;
