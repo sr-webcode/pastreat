@@ -1,14 +1,25 @@
 .products-intro {
   position: relative;
-  // background-color: #F9F5EF;
-  padding: 18px 0;
+  padding-top: 62px;
+  padding-bottom: 62px;
   @include respond-to(medium) {
-    padding: 40px 0;
+    padding-bottom: 15px;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .container {
+    max-width: 500px;
+    @include respond-to(medium) {
+      max-width: 1150px;
+    }
   }
 }
 
 .product-box {
   display: block;
+  cursor: pointer;
   margin: 40px 0;
   @include respond-to(medium) {
     margin: 0;
