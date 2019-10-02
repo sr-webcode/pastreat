@@ -1,8 +1,8 @@
 import React from "react";
 import HeroSection from "./heroSection";
 import ProductsIntro from "./productsIntro";
-import RecentProducts from '../../containers/recentProducts';
-import SubscribeSection from './subscribeSection'
+import RecentProducts from "../../containers/recentProducts";
+import AboutSection from "./aboutSection";
 
 const Content = () => {
   return (
@@ -10,8 +10,7 @@ const Content = () => {
       <HeroSection />
       <RecentProducts />
       <ProductsIntro />
-
-      <SubscribeSection />
+      <AboutSection />
     </main>
   );
 };
