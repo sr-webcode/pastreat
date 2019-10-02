@@ -1,21 +1,19 @@
 .products-intro {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 70px;
+  padding-top: 120px;
+  padding-bottom: 40px;
   background-color: #f9f5ef;
-
   &::after {
     content: "";
     position: absolute;
     display: block;
-    bottom: 0;
+    top: 0;
     margin-bottom: -10px;
     width: 100%;
     height: 30px;
-    background-image: url("/images/assets/cloudsBottom.jpg");
+    background-image: url("/images/assets/clouds.jpg");
     background-repeat: repeat-x;
   }
-
 
   h2 {
     text-align: center;
@@ -29,8 +27,6 @@
       max-width: 1150px;
     }
   }
-
-
 }
 
 .product-box {

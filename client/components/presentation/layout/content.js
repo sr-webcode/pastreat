@@ -8,8 +8,8 @@ const Content = () => {
   return (
     <main>
       <HeroSection />
-      <RecentProducts />
       <ProductsIntro />
+      <RecentProducts />
       <AboutSection />
     </main>
   );
