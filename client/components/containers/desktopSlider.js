@@ -4,13 +4,23 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import SlideShow from "../presentation/layout/slide";
 import SlideShowBullets from "../presentation/layout/slideBullets";
+import { clearInterval, clearImmediate } from "timers";
 
 class DesktopSlider extends Component {
+  constructor(props) {
+    super(props);
+    this.currentTime = null;
+  }
   componentDidMount() {
-    setInterval(() => {
+    this.currentTime = setInterval(() => {
       this.props.initSlide();
     }, 2500);
   }
+
+  componentWillUnmount() {
+    window.clearInterval(this.currentTime);
+  }
+
 
   render() {
     const currentSliders = this.props.slideState.sliders;

@@ -7,22 +7,21 @@ import MobileMenu from "./mobileMenu/menu";
 import Overlay from "../misc/overlay";
 import { Provider } from "react-redux";
 import globalStore from "../../redux-layer/store/index";
-
-//start working with the router!!!!!!
-
-// separate the main contents and the other <content class=""></content>
+import { BrowserRouter } from 'react-router-dom'
 
 class Main extends Component {
   render() {
     return (
-      <Provider store={globalStore}>
-        <Cart />
-        <Overlay />
-        <MobileMenu />
-        <Header />
-        <Content />
-        <Footer />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={globalStore}>
+          <Cart />
+          <Overlay />
+          <MobileMenu />
+          <Header />{/*  navigation routes will be here!*/}
+          <Content />{/*  site content routes will be here!*/}
+          <Footer />
+        </Provider>
+      </BrowserRouter>
     );
   }
 }

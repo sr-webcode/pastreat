@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-import actions from '../../redux-layer/actions/index'
+import actions from '../../redux-layer/actions/index';
+import { Link } from 'react-router-dom'
 
 
 class Navigation extends Component {
@@ -13,19 +14,19 @@ class Navigation extends Component {
       <nav className="site-nav">
         <ul>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">Pastries</a>
+            <Link to="/pastries">Pastries</Link>
           </li>
           <li>
-            <a href="#">Services</a>
+            <Link to="/services">Services</Link>
           </li>
           <li>
-            <a href="#" onClick={openCart}>Cart</a>
+            <Link to="#" onClick={openCart}>Cart</Link>
           </li>
           <li>
-            <a href="#" onClick={openSearch}>Search</a>
+            <Link to="#" onClick={openSearch}>Search</Link>
           </li>
         </ul>
       </nav>
