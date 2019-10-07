@@ -1,20 +1,19 @@
-
 const initSlide = () => {
   return {
-    type: "initSlide",
-  }
-}
+    type: "initSlide"
+  };
+};
 
-const slideChange = (val) => {
+const slideChange = val => {
   return {
     type: "slideChange",
     payload: val
-  }
-}
+  };
+};
 
 const sliderActions = {
   initSlide,
   slideChange
-}
+};
 
 export default sliderActions;
