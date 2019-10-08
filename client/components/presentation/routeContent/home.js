@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
 
-import HeroSection from '../layout/heroSection'
-import ProductsIntro from '../layout/productsIntro'
-import RecentProducts from '../../containers/recentProducts';
-import AboutSection from '../layout/aboutSection';
-
+import HeroSection from "../layout/heroSection";
+import ProductsIntro from "../layout/productsIntro";
+import RecentProducts from "../../containers/recentProducts";
+import AboutSection from "../layout/aboutSection";
 
 export default function HomeRouteContent() {
   return (
@@ -14,5 +13,5 @@ export default function HomeRouteContent() {
       <RecentProducts />
       <AboutSection />
     </Fragment>
-  )
+  );
 }

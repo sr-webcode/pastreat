@@ -1,0 +1,119 @@
+.pastries {
+  padding: 0;
+  .container {
+    font-size: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+%child-style {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  min-height: 250px;
+  h3 {
+    margin-bottom: 14px;
+  }
+}
+.pastry-search-section {
+  @extend %child-style;
+  // background-color: tomato;
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: top;
+    width: 29.99%;
+  }
+}
+
+.pastry-content {
+  position: relative;
+  @extend %child-style;
+  background-color: rgb(236, 236, 236);
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: top;
+    width: 69.99%;
+  }
+}
+
+//pastry categories
+.pastry-categories {
+  list-style: none;
+  li {
+    cursor: pointer;
+    display: block;
+    padding: 14px;
+    font-weight: bold;
+    border: 1px solid rgba(32, 32, 32, 0.2);
+    font-size: 16px;
+    transition: background 0.4s ease;
+    border-radius: 5px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 3px;
+    }
+    &:hover {
+      background-color: $primary-color;
+      color: #fefefe;
+    }
+  }
+}
+
+.pastry-hero {
+  min-height: 500px;
+  background-color: #f9f5ef;
+
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-bottom: -10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("/images/assets/clouds.jpg");
+    background-repeat: repeat-x;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-bottom: -10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("/images/assets/cloudsBottom.jpg");
+    background-repeat: repeat-x;
+  }
+}
+
+//pastry content items
+
+//pastry product box shoould have a custom mixin respond to scale well inside a container
+
+.pastry-content-products {
+  font-size: 0;
+  width: 100%;
+}
+
+.pastry-product-box {
+  min-height: 200px;
+  h4 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+  display: inline-block;
+  width: calc(100% / 3);
+  vertical-align: top;
+}
+
+.pastry-product-box-description {
+}

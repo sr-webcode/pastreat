@@ -1,7 +1,7 @@
 .about-section {
-  min-height: 300px;
   position: relative;
-  padding-top: 50px;
+  min-height: 300px;
+  padding-top: 30px;
   padding-bottom: 50px;
   background-color: #fefefe;
 
@@ -15,7 +15,7 @@
   }
   @include respond-to(medium) {
     margin-bottom: 0;
-    padding-top: 40px;
+    padding-top: 30px;
     padding-bottom: 30px;
   }
 }
