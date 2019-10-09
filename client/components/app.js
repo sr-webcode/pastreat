@@ -1,3 +1,4 @@
+import "./misc/fontAwesome";
 import "../styles/style.scss";
 const app = document.getElementById("app");
 import React, { Component } from "react";
@@ -6,9 +7,7 @@ import Main from "./containers/main";
 
 class App extends Component {
   render() {
-    return (
-        <Main />
-      );
+    return <Main />;
   }
 }
 

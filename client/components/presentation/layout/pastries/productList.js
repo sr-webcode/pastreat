@@ -1,3 +1,4 @@
+
 import React, { Fragment } from "react";
 
 //temporary items
@@ -7,20 +8,30 @@ const products = [
     price: 12,
     category: "Cake",
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, id`,
-    image: ""
+    image: "/images/assets/redcake1.png"
   }
 ];
 
 const simulateRequest = items => {
-  //multiply and loop items!
+  //multiply and loop items to populate list!
+
   for (let x = 0; x < 5; x++) {
     items = items.concat(items[0]);
   }
+
   return items.map((data, index) => {
     return (
       <div key={index} className="pastry-product-box">
-        <h4>{data.productName}</h4>
-        <p>{data.description}</p>
+        <div className="pastry-product-wrapper">
+          {" "}
+          {/* just a wrapper for the animation*/}
+          <img src={data.image} alt="cake" />
+          <div className="pastry-product-hidden-caption">
+            <h5>{data.productName}</h5>
+            <p>{data.description}</p>
+            <button className="cta-defaults">view item</button>
+          </div>
+        </div>
       </div>
     );
   });

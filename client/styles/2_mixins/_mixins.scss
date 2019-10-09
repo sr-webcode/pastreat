@@ -10,3 +10,16 @@ $breakPoints: (
     @content;
   }
 }
+
+$pastry-breakpoints: (
+  semi: 500px,
+  large: 950px
+);
+
+@mixin respond-pastry($size) {
+  $value: map-get($pastry-breakpoints, $size);
+  @media screen and(min-width: $value) {
+    @content;
+  }
+
+}
