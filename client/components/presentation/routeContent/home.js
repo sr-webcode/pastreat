@@ -9,8 +9,10 @@ export default function HomeRouteContent() {
   return (
     <Fragment>
       <HeroSection />
-      <ProductsIntro />
-      <RecentProducts />
+      <div className="bg-pattern">
+        <ProductsIntro />
+        <RecentProducts />
+      </div>
       <AboutSection />
     </Fragment>
   );

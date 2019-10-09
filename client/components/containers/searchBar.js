@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import actions from '../../redux-layer/actions/index'
 
 class SearchBar extends Component {
+
   render() {
     const closeSearch = this.props.closeSearch;
     const showSearchBar = this.props.menuState.searchBar;

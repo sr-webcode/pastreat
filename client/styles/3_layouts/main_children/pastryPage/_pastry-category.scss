@@ -1,0 +1,41 @@
+.pastry-categories {
+  list-style: none;
+
+  li {
+    cursor: pointer;
+    display: block;
+    padding: 14px;
+    font-weight: bold;
+    border: 1px solid rgba(32, 32, 32, 0.2);
+    font-size: 16px;
+    transition: background 0.4s ease;
+    border-radius: 5px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 3px;
+    }
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fefefe;
+    }
+
+    @include respond-pastry(semi) {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      max-width: 200px;
+      margin: 4px;
+      text-align: left;
+    }
+  }
+
+  svg {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+
+  @include respond-to(medium) {
+    text-align: center;
+  }
+}

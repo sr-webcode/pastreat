@@ -16,8 +16,7 @@ main {
   }
 }
 
-@import "./main_children/hero-section";
-@import "./main_children/products-intro";
-@import "./main_children/recentRecipes";
-@import "./main_children/about-section";
-@import "./main_children//pastry-section";
+
+//import different scss of each page
+@import "./main_children/homePage/index";
+@import "./main_children/pastryPage/index";

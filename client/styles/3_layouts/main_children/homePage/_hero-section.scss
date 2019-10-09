@@ -42,6 +42,7 @@
   width: 100%;
   margin: 60px auto 0 auto;
   max-width: 450px;
+
   @include respond-to(medium) {
     margin-top: 30px;
     text-align: left;
@@ -55,4 +56,13 @@
 .cta-hero {
   @extend .cta-defaults;
   margin-top: 10px;
+}
+
+
+//bg wrapper hack
+
+.bg-pattern {
+  background-repeat: repeat;
+  background-position: center center;
+  background-image: url('/images/assets/bgTan.png');
 }

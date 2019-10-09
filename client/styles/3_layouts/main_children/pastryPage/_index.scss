@@ -1,0 +1,53 @@
+.pastries {
+  padding: 0;
+
+  .container {
+    font-size: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+%child-style {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  min-height: 250px;
+
+  h3 {
+    margin-bottom: 14px;
+    text-align: center;
+  }
+}
+
+
+///these are the two main children of pastry section
+
+.pastry-search-section {
+  @extend %child-style;
+
+  // background-color: tomato;
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: top;
+    width: 29.99%;
+  }
+}
+
+.pastry-content {
+  position: relative;
+  @extend %child-style;
+
+  // background-color: rgb(236, 236, 236);
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: top;
+    width: 69.99%;
+  }
+}
+
+
+@import "./pastry-hero";
+@import "./pastry-category";
+@import "./pastry-content";
