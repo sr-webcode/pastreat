@@ -38,6 +38,53 @@
 
 .pastry-service-list {
   min-height: 400px;
-  margin-top: 50px;
-  background-color: tomato;
+  margin: 50px 0;
+
+  .container {
+    font-size: 0;
+    width: 100%;
+    max-width: 450px;
+    @include respond-to(medium) {
+      max-width: 1150px;
+    }
+  }
+}
+
+.pastry-service-list-box {
+  padding: 10px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @include respond-to(medium) {
+    margin-top: 0;
+    padding: 0;
+  }
+}
+.pastry-service-image {
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+
+.pastry-service-image-alt {
+  display: none;
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: top;
+    width: 49.99%;
+  }
+}
+
+.pastry-service-list-caption {
+  h2 {
+    font-size: 30px;
+  }
+  font-size: 18px;
+  @include respond-to(medium) {
+    display: inline-block;
+    vertical-align: top;
+    width: 49.99%;
+    padding: 20px;
+  }
 }

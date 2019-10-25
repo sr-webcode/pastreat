@@ -1,7 +1,7 @@
 .pastry-hero {
   padding-bottom: 0;
-  background-color: rgba(249, 245, 239, 0.90);
-  background-image: url('/images/assets/bgTan.png');
+  background-color: rgba(249, 245, 239, 0.9);
+  background-image: url("/images/assets/bgTan.png");
   background-size: cover;
   background-position: center center;
   background-repeat: repeat-x;
@@ -33,7 +33,6 @@
     background-repeat: repeat-x;
   }
 
-
   .container {
     font-size: 18px;
     min-height: 340px;
@@ -51,18 +50,22 @@
   }
 }
 
-
 .pastry-hero-caption {
   padding: 5px;
-  text-align: left;
+  text-align: center;
   display: block;
   width: 100%;
   max-width: 350px;
-
+  margin: 0 auto;
   h1 {
     font-size: 50px;
     color: $primary-color;
     color: $primary-cta-color;
+  }
+
+  @include respond-to(medium) {
+    text-align: left;
+    margin: 0;
   }
 }
 
@@ -81,7 +84,6 @@
   background-position: center center;
 
   @include respond-to(medium) {
-    background-image: url('/images/assets/chefOK.png');
-
+    background-image: url("/images/assets/chefOK.png");
   }
 }

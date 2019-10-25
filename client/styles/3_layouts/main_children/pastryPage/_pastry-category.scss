@@ -1,5 +1,6 @@
 .pastry-categories {
   list-style: none;
+  text-align: center;
 
   li {
     cursor: pointer;
@@ -10,7 +11,7 @@
     font-size: 16px;
     transition: background 0.4s ease;
     border-radius: 5px;
-
+    text-align: left;
     &:not(:last-of-type) {
       margin-bottom: 3px;
     }
@@ -38,4 +39,5 @@
   @include respond-to(medium) {
     text-align: center;
   }
+
 }
