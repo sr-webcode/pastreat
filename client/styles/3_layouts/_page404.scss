@@ -1,0 +1,34 @@
+.page-404 {
+  background-color: rgb(252, 252, 252);
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 500;
+
+  .container {
+    position: relative;
+    height: 100%;
+  }
+}
+
+.page-404-content {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  .cta-defaults {
+    margin-top: 20px
+  }
+}
+
+.sad-cupcake {
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+}

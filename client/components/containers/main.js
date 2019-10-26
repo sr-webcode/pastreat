@@ -7,7 +7,8 @@ import MobileMenu from "./mobileMenu/menu";
 import Overlay from "../misc/overlay";
 import { Provider } from "react-redux";
 import globalStore from "../../redux-layer/store/index";
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+
 
 class Main extends Component {
   render() {
@@ -17,8 +18,8 @@ class Main extends Component {
           <Cart />
           <Overlay />
           <MobileMenu />
-          <Header />{/*  navigation routes will be here!*/}
-          <Content />{/*  site content routes will be here!*/}
+          <Header />
+          <Content />
           <Footer />
         </Provider>
       </BrowserRouter>
