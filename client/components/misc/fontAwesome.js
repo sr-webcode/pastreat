@@ -4,12 +4,14 @@ import {
   faBirthdayCake,
   faBreadSlice,
   faChartPie,
-  faCandyCane
+  faCandyCane,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faCookieBite,
   faBirthdayCake,
   faBreadSlice,
   faChartPie,
-  faCandyCane
+  faCandyCane,
+  faUser
 );

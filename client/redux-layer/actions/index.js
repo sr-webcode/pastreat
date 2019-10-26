@@ -1,6 +1,7 @@
 import widgetAction from './widgetActions'
 import slideAction from './sliderActions'
 import recentProductAction from './recentProductActions'
+import loginAction from './loginAction'
 
 
 const actions = {
@@ -11,8 +12,8 @@ const actions = {
   openSearch: widgetAction.openSearch,
   initSlide: slideAction.initSlide,
   slideChange: slideAction.slideChange,
-  setRecentProducts: recentProductAction.setRecentProducts
-
+  setRecentProducts: recentProductAction.setRecentProducts,
+  setUsersAccount: loginAction.setAccount
 }
 
 export default actions;
