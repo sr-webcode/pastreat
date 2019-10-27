@@ -13,7 +13,10 @@ const actions = {
   initSlide: slideAction.initSlide,
   slideChange: slideAction.slideChange,
   setRecentProducts: recentProductAction.setRecentProducts,
-  setUsersAccount: loginAction.setAccount
+  setUsersAccount: loginAction.setAccount,
+  setFieldErrors: loginAction.setFieldErrors,
+  loggingIn: loginAction.loggingIn,
+  successLogin: loginAction.successLogin
 }
 
 export default actions;

@@ -6,7 +6,9 @@ const express = require('express'),
   path = require('path'),
   port = process.env.port || process.env.NODE_ENV !== "production" ? 4040 : 2020,
   mongoose = require('mongoose'),
-  routeMan = require('./routes/index');
+  routeMan = require('./routes/index'),
+  passport = require('passport'),
+  session = require('express-session');
 
 
 
@@ -30,10 +32,17 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
-
 //passport?
-
+require('./config/passport')(passport);
+app.use(session({ secret: 'fiberEnriched', resave: true, saveUninitialized: true }))
+app.use(passport.initialize());
+app.use(passport.session());
+app.use((req, res, next) => {
+  req.passport = passport;
+  next();
+})
 //mongoose online
+
 
 //server init
 routeMan.serve(app, publicAssets);

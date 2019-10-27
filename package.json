@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "live": "concurrently \"npm:dev:client\" \"npm run dev:server\"",
+    "build": "npm run build:client && npm run start:server",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev:server": "cross-env NODE_ENV=development nodemon ./server/index.js",
-    "build:server": "node ./server/index.js"
+    "start:server": "cross-env NODE_ENV=production node ./server/index.js"
   },
   "keywords": [],
   "author": "sean <sr.webcode@gmail.com>",
@@ -21,8 +22,11 @@
     "bcrypt": "^3.0.6",
     "concurrently": "^4.1.2",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "express-validator": "^6.2.0",
+    "memorystore": "^1.6.1",
     "mongoose": "^5.7.7",
+    "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
