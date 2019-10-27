@@ -12,10 +12,10 @@ class AdminPanel extends Component {
     const url = process.env.NODE_ENV !== "production" ? "http://localhost:4040/adminAccess" : "/adminAccess";
     axios.get(url)
       .then((res) => {
+
         //already authenticated , push it back to admin panel
         if (res.data) return this.props.history.push('/adminPanel')
-        //do nothing
-        console.log(`still need to login!`)
+
       })
       .catch((err) => {
         console.log(err)

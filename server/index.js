@@ -8,7 +8,9 @@ const express = require('express'),
   mongoose = require('mongoose'),
   routeMan = require('./routes/index'),
   passport = require('passport'),
-  session = require('express-session');
+  session = require('express-session'),
+  memstore = require('memorystore')(session);
+
 
 
 
@@ -34,14 +36,24 @@ app.use(express.urlencoded({ extended: true }))
 
 //passport?
 require('./config/passport')(passport);
-app.use(session({ secret: 'fiberEnriched', resave: true, saveUninitialized: true }))
+
+app.use(session({
+  secret: 'fiberEnriched',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { maxAge: 86400000 },
+  store: new memstore({ checkPeriod: 86400000 })
+}))
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => {
   req.passport = passport;
   next();
 })
-//mongoose online
+
+
+//mongoose dev local for testing
 
 
 //server init

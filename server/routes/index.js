@@ -1,10 +1,13 @@
 const adminAcess = require('./adminAccess');
-const adminPanel = require('./adminPanel');
+const adminDash = require('./adminDash');
+const adminUpload = require('./adminUpload');
+
 
 exports.serve = (app, publicAssets) => {
 
   app.use('/adminAccess', adminAcess)
-  app.use('/adminDash', adminPanel)
+  app.use('/adminDash', adminDash)
+  app.use('/upload', adminUpload)
 
   if (process.env.NODE_ENV !== "development") {
     app.use("*", (req, res) => {
