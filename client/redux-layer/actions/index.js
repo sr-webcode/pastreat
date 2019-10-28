@@ -1,8 +1,8 @@
-import widgetAction from './widgetActions'
-import slideAction from './sliderActions'
-import recentProductAction from './recentProductActions'
-import loginAction from './loginAction'
-
+import widgetAction from "./widgetActions";
+import slideAction from "./sliderActions";
+import recentProductAction from "./recentProductActions";
+import loginAction from "./loginAction";
+import newProduct from "./newProductActions";
 
 const actions = {
   burgerToggle: widgetAction.burgerToggle,
@@ -16,7 +16,9 @@ const actions = {
   setUsersAccount: loginAction.setAccount,
   setFieldErrors: loginAction.setFieldErrors,
   loggingIn: loginAction.loggingIn,
-  successLogin: loginAction.successLogin
-}
+  successLogin: loginAction.successLogin,
+  setProductRecord: newProduct.setProductRecord,
+  resetProductRecord: newProduct.resetForm
+};
 
 export default actions;

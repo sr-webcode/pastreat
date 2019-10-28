@@ -9,7 +9,7 @@ module.exports = {
   ],
   newProduct: [
     check('prodname')
-      .not().isEmpty().withMessage('nae field cannot empty!'),
+      .not().isEmpty().withMessage('name field cannot empty!'),
     check('prodcategory')
       .not().isEmpty().withMessage('category field cannot empty!'),
     check('proddesc')
