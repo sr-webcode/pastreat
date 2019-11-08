@@ -10,6 +10,8 @@ class AdminPanel extends Component {
     this.logoutAccount = this.logoutAccount.bind(this);
     this.addItem = this.addItem.bind(this);
     this.setProduct = this.setProduct.bind(this);
+    this.imgRef = React.createRef();
+    this.imageLookup = this.imageLookup.bind(this);
   }
 
   componentDidMount() {
@@ -46,7 +48,7 @@ class AdminPanel extends Component {
   }
 
   addItem(e) {
-    const { prodname, prodcategory, proddesc } = this.props.product;
+    const { prodname, prodcategory, proddesc, imageFile } = this.props.product;
     e.preventDefault();
     e.target.reset();
     const url =
@@ -54,7 +56,7 @@ class AdminPanel extends Component {
         ? "http://localhost:4040/upload"
         : "/upload";
     axios
-      .post(url, { prodname, prodcategory, proddesc })
+      .post(url, { prodname, prodcategory, proddesc, imageFile })
       .then(res => {
         //clear errors and field
         this.props.resetform();
@@ -81,17 +83,37 @@ class AdminPanel extends Component {
       });
   }
 
+  imageLookup() {
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+    //work on preloading files to have a preview!
+
+    console.log(`file will be previewed!`);
+  }
   setProduct(e) {
     const target = e.target.name;
     const targetval = e.currentTarget.value;
     const currentData = Object.assign({}, this.props.product, {
       [`${target}`]: targetval
     });
+    if (target.toLowerCase() === "imagefile") this.imageLookup();
     this.props.setRecord(currentData);
   }
 
   render() {
-    const { prodname, prodcategory, proddesc } = this.props.product;
+    const {
+      prodname,
+      prodcategory,
+      proddesc,
+      imageFile,
+      previewFile
+    } = this.props.product;
+
     return (
       <section className="admin-section">
         <div className="container">
@@ -99,8 +121,12 @@ class AdminPanel extends Component {
           <button className="log-out-btn" onClick={this.logoutAccount}>
             sign out
           </button>
-          <form onSubmit={this.addItem} className="frm-product-add">
-            <label className="frm-product-field" htmlFor="prodname">
+          <form
+            onSubmit={this.addItem}
+            className="frm-product-add"
+            encType="multipart/form-data"
+          >
+            <label className="frm-product-field label" htmlFor="prodname">
               Name:
             </label>
             <input
@@ -116,7 +142,19 @@ class AdminPanel extends Component {
                 {this.props.product.prodErrors.prodname}
               </p>
             )}
-            <label className="frm-product-field" htmlFor="prodcategory">
+            <label className="frm-product-field label" htmlFor="imageFile">
+              Product Image:
+            </label>
+
+            <input
+              type="file"
+              name="imageFile"
+              className="imageFile"
+              ref={this.imgRef}
+              onChange={this.setProduct}
+            />
+            {previewFile && <img src={previewFile} />}
+            <label className="frm-product-field label" htmlFor="prodcategory">
               Category:
             </label>
             <select
@@ -137,7 +175,7 @@ class AdminPanel extends Component {
                 {this.props.product.prodErrors.prodcategory}
               </p>
             )}
-            <label className="frm-product-field" htmlFor="proddesc">
+            <label className="frm-product-field label" htmlFor="proddesc">
               Product Description:
             </label>
             <textarea
@@ -152,7 +190,6 @@ class AdminPanel extends Component {
                 {this.props.product.prodErrors.proddesc}
               </p>
             )}
-
             <button className="cta-defaults">Add Record</button>
           </form>
         </div>

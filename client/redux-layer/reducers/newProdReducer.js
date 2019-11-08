@@ -2,6 +2,8 @@ const prodState = {
   prodname: "",
   prodcategory: "",
   proddesc: "",
+  imageFile: "",
+  previewFile: null,
   prodErrors: {}
 };
 

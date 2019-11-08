@@ -16,8 +16,6 @@
   }
 }
 
-
-
 .log-out-btn {
   cursor: pointer;
   display: inline-block;
@@ -44,20 +42,23 @@
   resize: none;
   padding: 10px;
   font-size: 16px;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 
   &::placeholder {
     font-size: 14px;
-    color: rgba(0, 0, 0, .4);
     font-family: $primary-font, Arial;
-
   }
+}
 
+.frm-product-field.label {
+  border: none;
 }
 
 .frm-product-add {
   label {
     padding: 0;
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   .cta-defaults {
@@ -71,8 +72,12 @@
     }
   }
 
-  .err-text{
+  .err-text {
     text-align: left;
   }
+}
 
+.imageFile {
+  display: block;
+  margin-top: 20px;
 }
