@@ -17,6 +17,9 @@ const newProdReducer = (state = prodState, action) => {
       return Object.assign({}, state, { prodErrors: action.payload });
     case "resetForm":
       return Object.assign({}, state, prodState);
+    case "previewImage":
+      return Object.assign({}, state, { previewFile: action.payload });
+
     default:
       return state;
   }

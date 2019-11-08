@@ -48,7 +48,12 @@ class AdminPanel extends Component {
   }
 
   addItem(e) {
-    const { prodname, prodcategory, proddesc, imageFile } = this.props.product;
+    const {
+      prodname,
+      prodcategory,
+      proddesc,
+      previewFile
+    } = this.props.product;
     e.preventDefault();
     e.target.reset();
     const url =
@@ -56,7 +61,7 @@ class AdminPanel extends Component {
         ? "http://localhost:4040/upload"
         : "/upload";
     axios
-      .post(url, { prodname, prodcategory, proddesc, imageFile })
+      .post(url, { prodname, prodcategory, proddesc, previewFile })
       .then(res => {
         //clear errors and field
         this.props.resetform();
@@ -84,17 +89,15 @@ class AdminPanel extends Component {
   }
 
   imageLookup() {
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-    //work on preloading files to have a preview!
-
-    console.log(`file will be previewed!`);
+      
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(this.imgRef.current.files[0]);
+    fileReader.onloadend = ev => {
+      const strBase64 = ev.target.result;
+      this.props.previewImage(strBase64);
+    };
   }
+
   setProduct(e) {
     const target = e.target.name;
     const targetval = e.currentTarget.value;
@@ -145,15 +148,16 @@ class AdminPanel extends Component {
             <label className="frm-product-field label" htmlFor="imageFile">
               Product Image:
             </label>
-
             <input
               type="file"
               name="imageFile"
-              className="imageFile"
+              className="imageAgents"
               ref={this.imgRef}
               onChange={this.setProduct}
             />
-            {previewFile && <img src={previewFile} />}
+            {previewFile && (
+              <img class="imageAgents output" src={previewFile} />
+            )}
             <label className="frm-product-field label" htmlFor="prodcategory">
               Category:
             </label>
@@ -209,7 +213,8 @@ const mapDispatchProps = dispatch =>
     {
       setFieldErrors: Actions.setFieldErrors,
       setRecord: Actions.setProductRecord,
-      resetform: Actions.resetProductRecord
+      resetform: Actions.resetProductRecord,
+      previewImage: Actions.previewImage
     },
     dispatch
   );

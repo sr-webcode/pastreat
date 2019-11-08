@@ -11,7 +11,15 @@ const resetForm = () => {
   };
 };
 
+const previewImage = val => {
+  return {
+    type: "previewImage",
+    payload: val
+  };
+};
+
 module.exports = {
   setProductRecord,
-  resetForm
+  resetForm,
+  previewImage
 };

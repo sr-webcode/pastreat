@@ -71,13 +71,16 @@
       background-color: rgb(139, 25, 73);
     }
   }
-
   .err-text {
     text-align: left;
   }
 }
 
-.imageFile {
+.imageAgents {
   display: block;
   margin-top: 20px;
+}
+.imageAgents.output {
+  width: 150px;
+  height: 150px;
 }

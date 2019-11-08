@@ -18,7 +18,8 @@ const actions = {
   loggingIn: loginAction.loggingIn,
   successLogin: loginAction.successLogin,
   setProductRecord: newProduct.setProductRecord,
-  resetProductRecord: newProduct.resetForm
+  resetProductRecord: newProduct.resetForm,
+  previewImage: newProduct.previewImage
 };
 
 export default actions;
