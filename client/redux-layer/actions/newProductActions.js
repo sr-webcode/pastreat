@@ -18,8 +18,25 @@ const previewImage = val => {
   };
 };
 
+
+const operationLoading = val => {
+  return {
+    type: "operationLoading",
+    payload: val
+  };
+};
+
+const itemAddNoti = val => {
+  return {
+    type: "itemAddNoti",
+    payload: val
+  };
+};
+
 module.exports = {
   setProductRecord,
   resetForm,
-  previewImage
+  previewImage,
+  operationLoading,
+  itemAddNoti
 };

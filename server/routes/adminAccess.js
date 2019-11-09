@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const loginMiddleware = require("../middlewares/login");
+const validator = require("../middlewares/validator");
 const loginController = require("../controller/login");
 
 ///multiple middlewares
@@ -9,6 +9,6 @@ router
     const isAuth = req.isAuthenticated();
     return res.status(200).send(isAuth);
   })
-  .post(loginMiddleware.admin, loginController);
+  .post(validator.admin, loginController);
 
 module.exports = router;

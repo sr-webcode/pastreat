@@ -15,11 +15,14 @@ const ProdSchema = new Schema({
     type: String,
     default: "category_name"
   },
+  prodOrigin: {
+    type: String
+  },
   dateAdded: {
     type: Date,
     default: new Date()
   }
 });
 
-const ProdModel = mongoose.model("productList", ProdSchema);
+const ProdModel = mongoose.model("items", ProdSchema);
 module.exports = ProdModel;

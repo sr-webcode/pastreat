@@ -56,9 +56,11 @@
 }
 
 .frm-product-add {
+  position: relative;
+
   label {
     padding: 0;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   .cta-defaults {
@@ -71,16 +73,85 @@
       background-color: rgb(139, 25, 73);
     }
   }
+
   .err-text {
     text-align: left;
   }
+}
+
+
+.process-loader {
+  display: block;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+
+
+.image-preview-group {
+  min-height: 100px;
+  background-color: rgb(243, 243, 243);
+  position: relative;
 }
 
 .imageAgents {
   display: block;
   margin-top: 20px;
 }
+
 .imageAgents.output {
-  width: 150px;
-  height: 150px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  top: 50%;
+  margin-top: 0;
+  margin-right: 20px;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+}
+
+.notifier {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  text-align: center;
+  background-color: rgb(139, 25, 73);
+  color: #fefefe;
+  padding: 5px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  animation: slideDown 0.80s ease forwards,
+    slideUp 0.80s ease 1.50s forwards;
+}
+
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -150%)
+  }
+
+  to {
+    transform: translate(-50%, 0)
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 0)
+  }
+
+  to {
+    transform: translate(-50%, -150%)
+  }
+
 }

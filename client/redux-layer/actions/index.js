@@ -19,7 +19,9 @@ const actions = {
   successLogin: loginAction.successLogin,
   setProductRecord: newProduct.setProductRecord,
   resetProductRecord: newProduct.resetForm,
-  previewImage: newProduct.previewImage
+  previewImage: newProduct.previewImage,
+  tickLoading: newProduct.operationLoading,
+  itemAddNoti: newProduct.itemAddNoti
 };
 
 export default actions;

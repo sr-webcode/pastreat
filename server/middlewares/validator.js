@@ -27,7 +27,11 @@ module.exports = {
       .isLength({
         min: 10
       })
-      .withMessage("description should be 10 characters or more")
+      .withMessage("description should be 10 characters or more"),
+    check('previewOriginName')
+      .custom((val) => {
+        return /\.(jpe?g|png|gif|svg|ico|bmp)$/ig.test(val)
+      }).withMessage('Invalid image file!')
   ],
   regularUser: [],
   newUser: []

@@ -3,6 +3,9 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Actions from "../../redux-layer/actions/index";
+import ImagePreview from '../presentation/layout/pastries/imagePreview';
+
+
 
 class AdminPanel extends Component {
   constructor(props) {
@@ -12,6 +15,7 @@ class AdminPanel extends Component {
     this.setProduct = this.setProduct.bind(this);
     this.imgRef = React.createRef();
     this.imageLookup = this.imageLookup.bind(this);
+
   }
 
   componentDidMount() {
@@ -48,25 +52,36 @@ class AdminPanel extends Component {
   }
 
   addItem(e) {
+
+    this.props.tickLoading(true);
+
     const {
       prodname,
       prodcategory,
       proddesc,
-      previewFile
+      previewFile,
+      previewOriginName
     } = this.props.product;
+
     e.preventDefault();
     e.target.reset();
     const url =
       process.env.NODE_ENV !== "production"
         ? "http://localhost:4040/upload"
         : "/upload";
+
     axios
-      .post(url, { prodname, prodcategory, proddesc, previewFile })
+      .post(url, { prodname, prodcategory, proddesc, previewFile, previewOriginName })
       .then(res => {
-        //clear errors and field
         this.props.resetform();
+        this.props.tickLoading(false);
+        this.props.itemNoti({
+          status: true,
+          msg: res.data
+        })
       })
       .catch(err => {
+        this.props.tickLoading(false);
         const errCollections = err.response.data.hasErrors.errors;
         if (errCollections) return this.mapErrors(errCollections);
         console.log(err);
@@ -82,6 +97,7 @@ class AdminPanel extends Component {
       .get(url)
       .then(res => {
         if (res.data) return this.props.history.push("/admin");
+
       })
       .catch(err => {
         console.log(err);
@@ -89,12 +105,11 @@ class AdminPanel extends Component {
   }
 
   imageLookup() {
-      
     const fileReader = new FileReader();
     fileReader.readAsDataURL(this.imgRef.current.files[0]);
     fileReader.onloadend = ev => {
       const strBase64 = ev.target.result;
-      this.props.previewImage(strBase64);
+      this.props.previewImage({ previewFile: strBase64, previewOriginName: this.imgRef.current.files[0].name });
     };
   }
 
@@ -114,12 +129,24 @@ class AdminPanel extends Component {
       prodcategory,
       proddesc,
       imageFile,
-      previewFile
+      previewFile,
+      prodErrors,
+      isLoading,
+      successAdd
     } = this.props.product;
 
+
     return (
+
       <section className="admin-section">
+
+        {successAdd.status && <span className="notifier">{successAdd.msg}</span>}
+
         <div className="container">
+          {isLoading && <div className="process-loader">
+            <span className="general-loader" />
+          </div>}
+
           <h2>Add New Product </h2>
           <button className="log-out-btn" onClick={this.logoutAccount}>
             sign out
@@ -140,24 +167,19 @@ class AdminPanel extends Component {
               onChange={this.setProduct}
               value={prodname}
             />
-            {this.props.product.prodErrors.prodname && (
+            {prodErrors.prodname && (
               <p className="err-text">
-                {this.props.product.prodErrors.prodname}
+                {prodErrors.prodname}
               </p>
             )}
-            <label className="frm-product-field label" htmlFor="imageFile">
-              Product Image:
-            </label>
-            <input
-              type="file"
-              name="imageFile"
-              className="imageAgents"
-              ref={this.imgRef}
-              onChange={this.setProduct}
+
+            <ImagePreview
+              setProduct={this.setProduct}
+              imgRef={this.imgRef}
+              previewOriginName={prodErrors.previewOriginName}
+              previewFile={previewFile}
             />
-            {previewFile && (
-              <img class="imageAgents output" src={previewFile} />
-            )}
+
             <label className="frm-product-field label" htmlFor="prodcategory">
               Category:
             </label>
@@ -168,15 +190,14 @@ class AdminPanel extends Component {
               value={prodcategory}
             >
               <option defaultValue></option>
-              <option value="cake">Cake</option>
-              <option value="cupcake">Cupcake</option>
-              <option value="cookies">Cookie</option>
+              <option value="cakes">Cake</option>
+              <option value="cupcakes">Cupcake</option>
               <option value="bread">Bread</option>
               <option value="others">Others</option>
             </select>
-            {this.props.product.prodErrors.prodcategory && (
+            {prodErrors.prodcategory && (
               <p className="err-text">
-                {this.props.product.prodErrors.prodcategory}
+                {prodErrors.prodcategory}
               </p>
             )}
             <label className="frm-product-field label" htmlFor="proddesc">
@@ -189,14 +210,15 @@ class AdminPanel extends Component {
               onChange={this.setProduct}
               value={proddesc}
             />
-            {this.props.product.prodErrors.proddesc && (
+            {prodErrors.proddesc && (
               <p className="err-text">
-                {this.props.product.prodErrors.proddesc}
+                {prodErrors.proddesc}
               </p>
             )}
             <button className="cta-defaults">Add Record</button>
           </form>
         </div>
+
       </section>
     );
   }
@@ -214,7 +236,9 @@ const mapDispatchProps = dispatch =>
       setFieldErrors: Actions.setFieldErrors,
       setRecord: Actions.setProductRecord,
       resetform: Actions.resetProductRecord,
-      previewImage: Actions.previewImage
+      previewImage: Actions.previewImage,
+      tickLoading: Actions.tickLoading,
+      itemNoti: Actions.itemAddNoti
     },
     dispatch
   );
